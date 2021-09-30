@@ -6,6 +6,7 @@ const categoryModule = {
     namespaced: true,
     state: {
         allCategories: [],
+        currentCategory: {}
     },
     actions,
     mutations,

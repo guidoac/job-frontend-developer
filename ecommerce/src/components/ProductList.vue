@@ -9,7 +9,7 @@
     <div class="product-list grid grid-cols-2 md:grid-cols-4 gap-4">
         <product-tile
             :product="product"
-            v-for="(product, index) in getAllProducts"
+            v-for="(product, index) in products"
             :key="`product-${index}`"
         />
     </div>
@@ -17,15 +17,10 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
 import ProductTile from "./ProductTile";
 
 export default {
   name: "ProductList",
-  computed: {
-    ...mapGetters("product", ["getAllProducts"]),
-  },
   components: {
     ProductTile,
   },
@@ -35,6 +30,11 @@ export default {
       required: false,
       default: "",
     },
+    products: {
+      type: Array,
+      required: false,
+      default: () => []
+    }
   },
 };
 </script>

@@ -1,6 +1,12 @@
 const mutations = {
-    pickAllCategories (state, categories) {
+    changeAllCategories (state, categories) {
         state.allCategories = categories
+    },
+    changeProductsInCategory (state, products) {
+        state.currentCategory.products = products
+    },
+    changeCurrentCategory (state, categoryId) {
+        state.currentCategory.title = categoryId
     }
 }
 

@@ -3,7 +3,9 @@
     <header class="main-header container mx-auto md:max-w-6xl flex flex-col">
         <div class="flex flex-row justify-around md:justify-between items-center px-4">
             <div class="logo-container w-full md:w-2/5">
-                <img class="" width="200" src="@/assets/logo.png" />
+                <router-link to="/">
+                    <img class="" width="200" src="@/assets/logo.png" />
+                </router-link>
             </div>
             <search-input class="w-3/5 hidden md:block" />
             <search-input-mobile class="" />
