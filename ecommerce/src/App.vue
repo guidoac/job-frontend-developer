@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <main-header />
+    <router-view />
+    <overlay />
   </div>
 </template>
 
 <script>
   import MainHeader from './components/Header/MainHeader'
+  import Overlay from './components/Overlay.vue'
   
   export default {
       name: 'App',
       components: {
-        MainHeader
+        MainHeader,
+        Overlay
       },
       created () {
         this.$store.dispatch('product/pickAllProducts')

@@ -9,6 +9,7 @@ module.exports = {
         'primary-light': '#8e7dcf',
         'primary-light-2': '#efecf8',
         'primary-light-3': '#dedaf1',
+        'overlay': 'rgba(0, 0, 0, 0.4)',
       }
     },
   },

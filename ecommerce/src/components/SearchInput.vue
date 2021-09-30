@@ -1,5 +1,6 @@
 <template>
     <div class="w-full relative">
+        <font-awesome icon="search" class="text-xl text-primary absolute right-4 top-1/4 md:hidden" @click.native="forceCloseSearch = false" />
         <base-input
             v-model="currentSearch"
             class="w-full"
@@ -13,7 +14,7 @@
         </base-input>
         <transition name="fade">
             <div 
-                class="products-search-container absolute top-full w-full p-4 border-2 border-primary rounded-b-3xl border-t-0 shadow-lg" 
+                class="products-search-container absolute top-full w-full p-4 border-2 border-primary rounded-b-3xl border-t-0 shadow-lg bg-white z-50" 
                 v-if="currentSearch !== '' && !forceCloseSearch"
             >
                 <div class="no-product-container" v-if="filteredOptions.length === 0">

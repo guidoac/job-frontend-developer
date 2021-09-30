@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 // custom modules
 import categoryModule from './category'
+import uiModule from './ui'
 import productModule from './product'
 import cartModule from './cart'
 import userModule from './user'
@@ -14,6 +15,7 @@ export default new Vuex.Store({
     category: categoryModule,
     cart: cartModule,
     product: productModule,
-    user: userModule
+    user: userModule,
+    ui: uiModule
   }
 })
