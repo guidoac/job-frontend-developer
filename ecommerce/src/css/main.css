@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-input:focus {
+input:focus, select:focus {
     outline: none;
     box-shadow: none;
   }
