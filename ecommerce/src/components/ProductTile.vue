@@ -1,5 +1,8 @@
 <template>
-    <div class="hover:shadow-xl transition duration-300 ease p-6 flex flex-col cursor-pointer items-center justify-between rounded-2xl">
+    <div 
+        class="hover:shadow-xl transition duration-300 ease p-6 flex flex-col cursor-pointer items-center justify-between rounded-2xl"
+        @click="goToProduct"
+    >
         <div class="product-tile-img mb-8 h-44 w-28">
             <img :src="product.image" />
         </div>
@@ -18,6 +21,11 @@
             product: {
                 type: Object,
                 required: true
+            }
+        },
+        methods: {
+            goToProduct () {
+                this.$router.push({ name: 'Product', params: { productId: this.product.id } })
             }
         }
     }

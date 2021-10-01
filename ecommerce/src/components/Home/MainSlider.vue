@@ -32,7 +32,7 @@ export default {
             ],
             bannerConfig: {
                 perPage: 1,
-                navigationEnabled: true,
+                navigationEnabled: false,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 loop: true,

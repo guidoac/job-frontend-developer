@@ -4,7 +4,7 @@
             class="category uppercase text-md flex-1 font-semibold text-center text-gray-700 py-4 hover:bg-primary-light-3 rounded-t-2xl transition duration-300 ease" 
             v-for="category in getAllCategories" 
             :key="`category-${category}`"
-            :to="`/category/${category}`"
+            :to="{ name: 'Category', params: { categoryId: category } }"
         >
             {{ category }}
         </router-link>

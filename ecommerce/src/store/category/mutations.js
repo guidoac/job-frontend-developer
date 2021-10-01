@@ -3,10 +3,10 @@ const mutations = {
         state.allCategories = categories
     },
     changeProductsInCategory (state, products) {
-        state.currentCategory.products = products
+        state.currentProductsInCategory = products
     },
     changeCurrentCategory (state, categoryId) {
-        state.currentCategory.title = categoryId
+        state.currentCategory = categoryId
     }
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div class="container max-w-6xl mx-auto py-10">
-    <product-list :title="$route.params.categoryId" :products="getCurrentCategory.products" />
+    <product-list :title="$route.params.categoryId" :products="getCurrentCategoryProducts" />
   </div>
 </template>
 
@@ -16,16 +16,24 @@ export default {
           'pickProductsinCategory'
       ])
   },
-  computed: {
-      ...mapGetters('category', [
-          'getCurrentCategory'
-      ])
+  data () {
+    return {
+      currentProducts: []
+    }
   },
   beforeMount () {
-      this.pickProductsinCategory(this.$route.params.categoryId)
+    this.currentProducts = this.getCurrentCategoryProducts
+  },
+  computed: {
+    ...mapGetters('category', [
+      'getCurrentCategoryProducts'
+    ])
   },
   components: {
       ProductList
+  },
+  beforeUpdate () {
+    this.pickProductsinCategory(this.$route.params.categoryId)
   }
 };
 </script>

@@ -4,6 +4,9 @@ const getters = {
     },
     getCurrentCategory: state => {
         return state.currentCategory;
+    },
+    getCurrentCategoryProducts: state => {
+        return state.currentProductsInCategory;
     }
 }
 
