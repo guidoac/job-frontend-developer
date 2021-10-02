@@ -18,6 +18,10 @@
         {
             "value": "price",
             "label": "Preço"
+        },
+        {
+            "value": "id",
+            "label": "SKU"
         }
     ]
 }

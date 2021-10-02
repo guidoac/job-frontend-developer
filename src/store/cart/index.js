@@ -5,6 +5,7 @@ import getters from './getters'
 const cartModule = {
     namespaced: true,
     state: {
+        currentCart: {}
     },
     actions,
     mutations,

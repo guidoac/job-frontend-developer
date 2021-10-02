@@ -22,7 +22,7 @@ export default {
     }
   },
   beforeMount () {
-    this.currentProducts = this.getCurrentCategoryProducts
+    this.pickProductsinCategory(this.$route.params.categoryId)
   },
   computed: {
     ...mapGetters('category', [

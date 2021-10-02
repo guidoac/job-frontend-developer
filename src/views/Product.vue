@@ -1,8 +1,8 @@
 <template>
-    <div class="container px-4 md:px-0 max-w-6xl mx-auto">
+    <div class="container px-4 md:px-0 max-w-6xl mx-auto" v-if="currentProduct" >
         <div 
             class="w-full mt-10 border-b-4 border-primary-light-2 uppercase font-semibold text-2xl md:text-3xl text-center text-gray-500 pb-4 mb-4 flex justify-around md:justify-between" 
-            v-if="currentProduct.title !== ''"
+            v-if="currentProduct.title"
         >
             <span class="">{{ currentProduct.title }}</span>
         </div>
@@ -46,7 +46,7 @@ export default {
     name: 'Product',
     data () {
         return {
-            qty: 0
+            qty: 1
         }
     },
     computed: {

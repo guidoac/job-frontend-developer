@@ -9,6 +9,8 @@
 <script>
   import MainHeader from './components/Header/MainHeader'
   import Overlay from './components/Overlay.vue'
+
+  import { mapActions } from 'vuex'
   
   export default {
       name: 'App',
@@ -16,9 +18,17 @@
         MainHeader,
         Overlay
       },
+      methods: {
+        ...mapActions({
+          pickAllProducts: 'product/pickAllProducts',
+          pickAllCategories: 'category/pickAllCategories',
+          getCurrentUser: 'user/getCurrentUser'
+        })
+      },
       created () {
-        this.$store.dispatch('product/pickAllProducts')
-        this.$store.dispatch('category/pickAllCategories')
+        this.pickAllProducts()
+        this.pickAllCategories()
+        this.getCurrentUser(1)
       }
   }
 </script>
