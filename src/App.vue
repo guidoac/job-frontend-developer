@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main-header />
-    <router-view />
+    <router-view class="my-10"/>
     <overlay />
   </div>
 </template>

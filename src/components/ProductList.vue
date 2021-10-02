@@ -6,7 +6,8 @@
     >
       <div class="hidden md:inline-block" />
       <span>{{ title }}</span>
-      <base-select class="w-1/3 md:w-1/6" @change="sortBy" placeholder="Ordenar por" :options="sortOptions" />
+      <base-select v-if="hasSorter" class="w-1/3 md:w-1/6" @change="sortBy" placeholder="Ordenar por" :options="sortOptions" />
+      <div class="hidden md:inline-block" v-else />
     </div>
     <div class="product-list grid grid-cols-2 md:grid-cols-4 gap-4">
         <product-tile
@@ -44,6 +45,11 @@ export default {
       type: Array,
       required: false,
       default: () => []
+    },
+    hasSorter: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   methods: {

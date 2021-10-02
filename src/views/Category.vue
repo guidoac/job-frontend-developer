@@ -1,6 +1,6 @@
 <template>
   <div class="container max-w-6xl mx-auto py-10">
-    <product-list :title="$route.params.categoryId" :products="getCurrentCategoryProducts" />
+    <product-list :title="$route.params.categoryId" :products="getCurrentCategoryProducts" :has-sorter="true" />
   </div>
 </template>
 
@@ -32,8 +32,10 @@ export default {
   components: {
       ProductList
   },
-  beforeUpdate () {
-    this.pickProductsinCategory(this.$route.params.categoryId)
+  watch: {
+    $route () {
+      this.pickProductsinCategory(this.$route.params.categoryId)
+    }
   }
 };
 </script>
