@@ -30,7 +30,6 @@
         await this.pickAllProducts()
         await this.pickAllCategories()
         await this.getCurrentUser(1)
-        await this.getCurrentUserCarts()
       }
   }
 </script>

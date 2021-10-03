@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-row items-center">
-        <span class="mr-2">Quantidade:</span> 
+        <span class="mr-2 hidden md:inline">Quantidade:</span>
+        <span class="mr-2 inline md:hidden">Qtd:</span>
         <div class="bg-white py-2 px-4 items-stratch items-center rounded-xl border-primary hover:border-primary-dark transition duration-300 ease border-2 flex flex-row justify-around">
             <div class="cursor-pointer text-gray-500 w-1/3 hover:text-gray-700 text-left" @click="decrementEvent">
                 <font-awesome icon="minus" class=""/>

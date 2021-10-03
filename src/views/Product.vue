@@ -26,7 +26,7 @@
                 <div class="bg-gray-100 rounded-3xl flex flex-col items-end p-10 w-full">
                     <qty-selector class="w-3/5" v-model="qty"/>
                     <p class="text-2xl my-6 text-primary font-semibold">{{ currentProduct.price * qty | price }}</p>
-                    <add-to-cart @add-to-cart="addToCart(currentProduct, qty)" class="w-full" />
+                    <add-to-cart @add-to-cart="addToCart({ product: currentProduct, qty })" class="w-full" />
                 </div>
             </div>
         </div>

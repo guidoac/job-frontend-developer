@@ -5,7 +5,8 @@ import getters from './getters'
 const userModule = {
     namespaced: true,
     state: {
-        currentUser: {}
+        currentUser: {},
+        currentUserCarts: []
     },
     actions,
     mutations,

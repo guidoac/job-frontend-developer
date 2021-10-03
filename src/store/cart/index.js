@@ -5,7 +5,6 @@ import getters from './getters'
 const cartModule = {
     namespaced: true,
     state: {
-        currentUserCarts: [],
         currentCart: {}
     },
     actions,

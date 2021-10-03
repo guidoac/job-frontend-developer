@@ -10,9 +10,17 @@
             <search-input class="w-3/5 hidden md:block" />
             <search-input-mobile class="" />
             <div class="w-full md:w-2/5 flex justify-end">
-                <div class="w-4/5 md:w-3/5 p-4 mt-2 bg-primary-light-2 flex flex-col items-center rounded-2xl shadow-lg">
+                <div 
+                    class="w-4/5 md:w-3/5 p-4 mt-2 bg-primary-light-2 hover:bg-primary-light-3 transition duration-300 ease cursor-pointer flex flex-col items-center rounded-2xl shadow-lg"
+                    @click="$router.push({ name: 'Cart' })"
+                >
                     <font-awesome icon="shopping-cart" class="text-3xl text-primary" />
-                    <p class="mt-4 text-md">Carrinho vazio</p>
+                    <p v-if="!getCurrentCart || (getCurrentCart.products && getCurrentCart.products.length === 0)" class="mt-4 text-md">
+                        Carrinho vazio
+                    </p>
+                    <p v-else-if="getCurrentCart.products && getCurrentCart.products.length > 0" class="mt-4 text-md">
+                        {{ getCurrentCart.products.length }} itens
+                    </p>
                 </div>
             </div>
         </div>
@@ -27,6 +35,8 @@ import SearchInputMobile from '../SearchInputMobile'
 import FontAwesome from '../FontAwesome'
 import HeaderCategories from './HeaderCategories'
 
+import { mapGetters } from 'vuex'
+
     export default {
         name: 'MainHeader',
         components: {
@@ -34,6 +44,11 @@ import HeaderCategories from './HeaderCategories'
             SearchInputMobile,
             FontAwesome,
             HeaderCategories
+        },
+        computed: {
+            ...mapGetters('cart', [
+                'getCurrentCart'
+            ])
         }
     }
 </script>
