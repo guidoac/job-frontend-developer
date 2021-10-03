@@ -1,5 +1,8 @@
 <template>
-    <button class="bg-primary-light hover:bg-primary-dark transition duration-300 ease uppercase text-white font-semibold text-xl px-4 py-3 rounded-xl">
+    <button 
+        class="bg-primary-light hover:bg-primary-dark transition duration-300 ease uppercase text-white font-semibold text-xl px-4 py-3 rounded-xl"
+        @click="$emit('click')"
+    >
         <slot />
     </button>
 </template>

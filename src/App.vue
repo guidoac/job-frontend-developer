@@ -22,13 +22,15 @@
         ...mapActions({
           pickAllProducts: 'product/pickAllProducts',
           pickAllCategories: 'category/pickAllCategories',
-          getCurrentUser: 'user/getCurrentUser'
+          getCurrentUser: 'user/getCurrentUser',
+          getCurrentUserCarts: 'cart/getCurrentUserCarts'
         })
       },
-      created () {
-        this.pickAllProducts()
-        this.pickAllCategories()
-        this.getCurrentUser(1)
+      async mounted () {
+        await this.pickAllProducts()
+        await this.pickAllCategories()
+        await this.getCurrentUser(1)
+        await this.getCurrentUserCarts()
       }
   }
 </script>

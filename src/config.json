@@ -4,7 +4,7 @@
     "categories_endpoint": "/products/categories",
     "categories_prods_endpoint": "/products/category/{categoryId}",
     "carts_endpoint": "/carts",
-    "user_cart_endpoint": "/carts/user/:userId:",
+    "user_cart_endpoint": "/carts/user/{userId}",
     "users_endpoint": "/users",
     "products_sort_options": [
         {

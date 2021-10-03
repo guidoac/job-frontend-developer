@@ -3,6 +3,7 @@
         <slide 
             v-for="(banner, index) in banners"
             :key="`banner-${index}`"
+            class="flex justify-center"
         >
             <img :src="banner.img" />
         </slide>

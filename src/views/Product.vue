@@ -26,11 +26,11 @@
                 <div class="bg-gray-100 rounded-3xl flex flex-col items-end p-10 w-full">
                     <qty-selector class="w-3/5" v-model="qty"/>
                     <p class="text-2xl my-6 text-primary font-semibold">{{ currentProduct.price * qty | price }}</p>
-                    <add-to-cart class="w-full" />
+                    <add-to-cart @add-to-cart="addToCart(currentProduct, qty)" class="w-full" />
                 </div>
             </div>
         </div>
-        <product-list class="mt-20" title="Produtos Relacionados" :products="getRelatedProducts" />
+        <product-list class="mt-20" title="Produtos Relacionados" :products="getCurrentCategoryProducts" />
     </div>
 </template>
 
@@ -59,15 +59,17 @@ export default {
         ]),
         currentProduct () {
             return this.getProductById(this.$route.params.productId)
-        },
-        getRelatedProducts () {
-            this.pickProductsinCategory(this.currentProduct.category)
-            return this.getCurrentCategoryProducts
         }
+    },
+    mounted () {
+        if(this.currentProduct) this.pickProductsinCategory(this.currentProduct.category)
     },
     methods: {
         ...mapActions('category', [
             'pickProductsinCategory'
+        ]),
+        ...mapActions('cart', [
+            'addToCart'
         ])
     },
     components: {

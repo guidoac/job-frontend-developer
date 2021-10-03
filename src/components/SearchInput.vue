@@ -29,6 +29,7 @@
                             'border-b-2 border-gray-200': index < filteredOptions.length - 1
                         }"
                         :key="`product-search-item-${index}`"
+                        @click="$router.push({ name: 'Product', params: { productId: product.id } })"
                     >
                         <div class="product-thumb w-1/5">
                             <img :src="product.image" width="80" height="100" />
