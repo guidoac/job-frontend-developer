@@ -13,6 +13,8 @@ module.exports = {
         'primary-medium-2': '#afa2dd',
         'primary-medium-3': '#bfb5e3',
         'overlay': 'rgba(0, 0, 0, 0.4)',
+        'secondary': '#ed1e78',
+        'secondary-dark': '#bd0f5a',
       },
       maxHeight: {
         '104': '32rem'

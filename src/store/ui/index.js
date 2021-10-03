@@ -6,6 +6,10 @@ const uiModule = {
     namespaced: true,
     state: {
         overlay: false,
+        notification: {
+            visible: false,
+            message: ''
+        },
     },
     actions,
     mutations,

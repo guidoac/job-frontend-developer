@@ -47,6 +47,7 @@ const actions = {
                     }
                 });
                 context.commit('changeCurrentCart', cartObject)
+                context.dispatch('ui/showNotification', 'Produto adicionado ao carrinho!', { root: true })
             })
         }
         else {
@@ -65,6 +66,7 @@ const actions = {
                         quantity: prodR.quantity
                     }
                 });
+                context.dispatch('ui/showNotification', 'Produto adicionado ao carrinho!', { root: true })
                 context.commit('changeCurrentCart', cartObjectResp)
             } )
         }

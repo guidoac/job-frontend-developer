@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import SearchInput from '../SearchInput'
-import SearchInputMobile from '../SearchInputMobile'
+import SearchInput from '../Form/SearchInput'
+import SearchInputMobile from '../Form/SearchInputMobile'
 import FontAwesome from '../FontAwesome'
 import HeaderCategories from './HeaderCategories'
 

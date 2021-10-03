@@ -23,5 +23,6 @@
             "value": "id",
             "label": "SKU"
         }
-    ]
+    ],
+    "notificationTimeout": 3000
 }

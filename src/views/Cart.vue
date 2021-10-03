@@ -16,14 +16,20 @@
                             'my-8': index > 0
                         }"
                     >
-                        <div class="w-32">
+                        <router-link 
+                            class="w-32 hover:transform hover:scale-110" 
+                            :to="{ name: 'Product', params: { productId: product.id }}"
+                        >
                             <img class="w-full" :src="product.image" />
-                        </div>
+                        </router-link>
                         <div class="flex-1 ml-10 flex flex-col justify-around items-end">
-                            <div class="text-lg text-gray-700">
+                            <router-link 
+                                :to="{ name: 'Product', params: { productId: product.id } }"
+                                class="text-lg text-gray-700 hover:text-primary-dark transition duration-300 ease"
+                            >
                                 {{ product.title }}
-                            </div>
-                            <qty-selector class="flex w-3/5 md:w-2/5 justify-self-end" v-model="product.quantity" />
+                            </router-link>
+                            <qty-selector class="flex w-4/5 md:w-2/5 justify-self-end" v-model="product.quantity" />
                             <div class="w-full text-right text-2xl font-semibold text-primary-dark">
                                 {{ product.price * product.quantity | price }}
                             </div>
@@ -40,7 +46,7 @@
                     <span class="font-semibold text-2xl text-primary-dark ">{{ calculateSubTotal | price }}</span>
                 </p>
                 <base-button
-                    class="mt-8"
+                    class="mt-8 bg-secondary hover:bg-secondary-dark"
                 >
                     Finalizar Pedido
                 </base-button>

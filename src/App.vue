@@ -3,12 +3,14 @@
     <main-header />
     <router-view class="my-10"/>
     <overlay />
+    <notification />
   </div>
 </template>
 
 <script>
   import MainHeader from './components/Header/MainHeader'
-  import Overlay from './components/Overlay.vue'
+  import Overlay from './components/Overlay'
+  import Notification from './components/Notification'
 
   import { mapActions } from 'vuex'
   
@@ -16,7 +18,8 @@
       name: 'App',
       components: {
         MainHeader,
-        Overlay
+        Overlay,
+        Notification
       },
       methods: {
         ...mapActions({

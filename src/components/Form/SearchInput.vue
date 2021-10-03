@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import BaseInput from './Form/BaseInput'
-import FontAwesome from './FontAwesome'
+import BaseInput from './BaseInput'
+import FontAwesome from '../FontAwesome'
 
 import { mapGetters } from 'vuex'
 

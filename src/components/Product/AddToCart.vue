@@ -1,5 +1,5 @@
 <template>
-    <base-button @click="$emit('add-to-cart')">
+    <base-button @click="$emit('add-to-cart')" class="bg-secondary hover:bg-secondary-dark">
         Comprar
     </base-button>
 </template>
