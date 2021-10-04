@@ -8,7 +8,8 @@ import {
     faSearch,
     faShoppingCart,
     faPlus,
-    faMinus
+    faMinus,
+    faTrash
  } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -16,7 +17,8 @@ library.add(
     faSearch,
     faShoppingCart,
     faPlus,
-    faMinus
+    faMinus,
+    faTrash
 )
 
     export default {

@@ -7,17 +7,32 @@
             <span class="">{{ currentProduct.title }}</span>
         </div>
         <div class="flex flex-col md:flex-row justify-between w-full">
-            <div class="w-full md:w-3/5 h-64 mt-10 relative flex justify-center">
+            <div 
+                class="w-full md:w-3/5 h-64 mt-10 relative flex justify-center" 
+                @mouseenter="showRating = true" 
+                @mouseleave="showRating = false"
+            >
                 <img :src="currentProduct.image" class="max-h-64 md:max-h-104"  />
-                <div class="absolute left-0 md:left-1/2 top-0 w-1/5 ">
-                    <star-rating
-                        class="w-full"
-                        v-model="currentProduct.rating.rate" 
-                        :read-only="true" 
-                        :show-rating="false"
-                        :star-size="22"
-                    />
-                </div>
+                <transition name="fade">
+                    <div class="absolute left-0 top-2 p-2 shadow-xl bg-gray-50 rounded-2xl" v-if="showRating">
+                        <star-rating
+                            class="w-full pb-1 pl-1"
+                            v-model="currentProduct.rating.rate" 
+                            :read-only="true" 
+                            :show-rating="false"
+                            :star-size="40"
+                        />
+                    </div>
+                </transition>
+            </div>
+            <div class="w-1/2 mx-auto flex justify-center md:hidden">
+                <star-rating
+                    class=" pb-1 pl-1"
+                    v-model="currentProduct.rating.rate" 
+                    :read-only="true" 
+                    :show-rating="false"
+                    :star-size="28"
+                />
             </div>
             <div class="flex flex-col w-full md:w-2/5 md:ml-8 ">
                 <h5 class="my-10">
@@ -46,7 +61,8 @@ export default {
     name: 'Product',
     data () {
         return {
-            qty: 1
+            qty: 1,
+            showRating: false
         }
     },
     computed: {
@@ -81,6 +97,12 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
 
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 </style>

@@ -70,6 +70,21 @@ const actions = {
                 context.commit('changeCurrentCart', cartObjectResp)
             } )
         }
+    },
+    deleteItem (context, index) {
+        let d = new Date()
+
+        context.state.currentCart.products.splice(index, 1)
+
+        let payload = {
+            userId: context.rootState.user.currentUser.id,
+            date: `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`,
+            products: context.state.currentCart.products
+        }
+
+        context.dispatch('ui/showNotification', 'Produto removido com sucesso!', { root: true })
+
+        console.log(payload)
     }
 }
 

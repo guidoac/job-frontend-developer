@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex justify-end" v-if="isMobile">
+    <div class="flex justify-end" v-if="isMobile">
         <font-awesome
             icon="search" 
             class="text-4xl text-primary md:hidden" 

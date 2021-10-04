@@ -18,10 +18,6 @@
         {
             "value": "price",
             "label": "Preço"
-        },
-        {
-            "value": "id",
-            "label": "SKU"
         }
     ],
     "notificationTimeout": 3000

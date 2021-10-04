@@ -8,7 +8,7 @@
                 </router-link>
             </div>
             <search-input class="w-3/5 hidden md:block" />
-            <search-input-mobile class="" />
+            <search-input-mobile class="w-2/5" />
             <div class="w-full md:w-2/5 flex justify-end">
                 <div 
                     class="w-4/5 md:w-3/5 p-4 mt-2 bg-primary-light-2 hover:bg-primary-light-3 transition duration-300 ease cursor-pointer flex flex-col items-center rounded-2xl shadow-lg"
@@ -18,8 +18,9 @@
                     <p v-if="!getCurrentCart || (getCurrentCart.products && getCurrentCart.products.length === 0)" class="mt-4 text-md">
                         Carrinho vazio
                     </p>
-                    <p v-else-if="getCurrentCart.products && getCurrentCart.products.length > 0" class="mt-4 text-md">
+                    <p v-else-if="getCurrentCart.products && getCurrentCart.products.length > 0" class="mt-4 text-md text-center">
                         {{ getCurrentCart.products.length }} itens
+                        <span class="block">{{ calculateSubTotal | price }}</span>
                     </p>
                 </div>
             </div>
@@ -48,7 +49,12 @@ import { mapGetters } from 'vuex'
         computed: {
             ...mapGetters('cart', [
                 'getCurrentCart'
-            ])
+            ]),
+            calculateSubTotal () {
+                let subTotal = this.$util.sumBy(this.getCurrentCart.products, product => product.price * product.quantity);
+
+                return subTotal
+            }
         }
     }
 </script>
