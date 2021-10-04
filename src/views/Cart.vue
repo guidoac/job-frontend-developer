@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div v-else>
-                    <p class="text-lg mt-10">Seu carrinho está vazio. <router-link class="text-primary-light hover:text-primary-dark transition duration-300 ease" :to="{ name: 'Home' }">Visite nosso catálogo</router-link> para encontrar algo legal para você!</p>
+                    <p class="text-lg mt-6 md:mt-0 mb-8 md:mb-0">Seu carrinho está vazio. <router-link class="text-primary-light hover:text-primary-dark transition duration-300 ease" :to="{ name: 'Home' }">Visite nosso catálogo</router-link> para encontrar algo legal para você!</p>
                 </div>
             </div>
             <div class="w-full md:w-2/5 bg-gray-100 rounded-3xl h-min flex flex-col p-8">

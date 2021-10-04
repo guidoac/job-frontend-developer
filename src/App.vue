@@ -25,8 +25,7 @@
         ...mapActions({
           pickAllProducts: 'product/pickAllProducts',
           pickAllCategories: 'category/pickAllCategories',
-          getCurrentUser: 'user/getCurrentUser',
-          getCurrentUserCarts: 'cart/getCurrentUserCarts'
+          getCurrentUser: 'user/getCurrentUser'
         })
       },
       async mounted () {

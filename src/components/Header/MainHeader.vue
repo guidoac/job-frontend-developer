@@ -15,7 +15,7 @@
                     @click="$router.push({ name: 'Cart' })"
                 >
                     <font-awesome icon="shopping-cart" class="text-3xl text-primary" />
-                    <p v-if="!getCurrentCart || (getCurrentCart.products && getCurrentCart.products.length === 0)" class="mt-4 text-md">
+                    <p v-if="!getCurrentCart || (getCurrentCart.products && getCurrentCart.products.length === 0)" class="mt-4 text-md text-center">
                         Carrinho vazio
                     </p>
                     <p v-else-if="getCurrentCart.products && getCurrentCart.products.length > 0" class="mt-4 text-md text-center">

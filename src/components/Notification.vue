@@ -23,12 +23,12 @@ export default {
 
 <style lang="scss" scoped>
 .bounce-enter-active {
-  animation: bounce-in .5s;
+  animation: move-to-down .5s;
 }
 .bounce-leave-active {
-  animation: bounce-in .5s reverse;
+  animation: move-to-down .5s reverse;
 }
-@keyframes bounce-in {
+@keyframes move-to-down {
   0% {
     transform: translateY(-100%)
   }

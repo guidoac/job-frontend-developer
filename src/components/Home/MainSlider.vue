@@ -5,7 +5,8 @@
             :key="`banner-${index}`"
             class="flex justify-center"
         >
-            <img :src="banner.img" />
+            <img class="block md:hidden" :src="banner.mobile" />
+            <img class="hidden md:block" :src="banner.img" />
         </slide>
     </carousel>
 </template>
@@ -24,10 +25,12 @@ export default {
             banners: [
                 {
                     img: '/banners/banner-1.jpg',
+                    mobile: '/banners/banner-mobile-1.jpg',
                     url: ''
                 },
                 {
                     img: '/banners/banner-2.jpg',
+                    mobile: '/banners/banner-mobile-2.jpg',
                     url: ''
                 }
             ],
