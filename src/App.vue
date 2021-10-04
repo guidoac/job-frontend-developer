@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <main-header />
-    <router-view class="my-10"/>
+    <router-view class="mb-10"/>
     <overlay />
     <notification />
+    <main-footer />
   </div>
 </template>
 
 <script>
   import MainHeader from './components/Header/MainHeader'
+  import MainFooter from './components/Footer/MainFooter'
   import Overlay from './components/Overlay'
   import Notification from './components/Notification'
 
@@ -18,6 +20,7 @@
       name: 'App',
       components: {
         MainHeader,
+        MainFooter,
         Overlay,
         Notification
       },
