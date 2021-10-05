@@ -4,9 +4,11 @@
             v-for="(banner, index) in banners"
             :key="`banner-${index}`"
             class="flex justify-center"
-        >
-            <img class="block md:hidden" :src="banner.mobile" />
-            <img class="hidden md:block" :src="banner.img" />
+        >   
+            <router-link :to="banner.url">
+                <img class="block md:hidden" :src="banner.mobile" />
+                <img class="hidden md:block" :src="banner.img" />
+            </router-link>
         </slide>
     </carousel>
 </template>
@@ -26,12 +28,12 @@ export default {
                 {
                     img: '/banners/banner-1.jpg',
                     mobile: '/banners/banner-mobile-1.jpg',
-                    url: ''
+                    url: '/category/electronics'
                 },
                 {
                     img: '/banners/banner-2.jpg',
                     mobile: '/banners/banner-mobile-2.jpg',
-                    url: ''
+                    url: '/category/electronics'
                 }
             ],
             bannerConfig: {
