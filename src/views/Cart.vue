@@ -1,5 +1,5 @@
 <template>
-    <div class="container px-4 md:px-0 max-w-6xl mx-auto ">
+    <div class="container px-4 xl:px-0 max-w-6xl mx-auto ">
         <div 
             class="w-full mt-10 border-b-4 border-primary-light-2 uppercase font-semibold text-2xl md:text-3xl text-center text-gray-500 pb-4 mb-4 flex justify-around md:justify-between" 
         >
@@ -37,7 +37,7 @@
                                     <font-awesome icon="trash" />
                                 </div>
                             </div>
-                            <qty-selector class="flex w-4/5 md:w-2/5 justify-self-end my-4 md:my-0" v-model="product.quantity" />
+                            <qty-selector class="flex w-4/5 md:w-1/2 xl:w-2/5 justify-self-end my-4 md:my-0" v-model="product.quantity" />
                             <div class="w-full text-right text-2xl font-semibold text-primary-dark">
                                 {{ product.price * product.quantity | price }}
                             </div>

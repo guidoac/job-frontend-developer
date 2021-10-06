@@ -7,8 +7,8 @@
                     <img class="" width="200" src="@/assets/logo.png" />
                 </router-link>
             </div>
-            <search-input class="w-3/5 hidden md:block" />
-            <search-input-mobile class="w-2/5" />
+            <search-input class="w-3/5 hidden md:block mx-4" />
+            <search-input-mobile class="block md:hidden w-2/5" />
             <div class="w-full md:w-2/5 flex justify-end">
                 <div 
                     class="w-4/5 md:w-3/5 p-4 mt-2 bg-primary-light-2 hover:bg-primary-light-3 transition duration-300 ease cursor-pointer flex flex-col items-center rounded-2xl shadow-lg"

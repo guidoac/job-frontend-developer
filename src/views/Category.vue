@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-6xl mx-auto py-10">
+  <div class="container max-w-6xl mx-auto py-10 px-4 xl:px-0">
     <product-list :title="$route.params.categoryId" :products="getCurrentCategoryProducts" :has-sorter="true" />
   </div>
 </template>
